@@ -6,6 +6,9 @@ var io = require('socket.io')(server);
 var five = require("johnny-five");
 var board = new five.Board();
 
+var port = process.env.PORT || 8080;
+app.set('port', port);
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function (req, res) {
