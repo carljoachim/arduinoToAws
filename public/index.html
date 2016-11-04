@@ -7,6 +7,7 @@
       var socket = io();
       socket.on('start', function (data) {
         console.log('Connection established..')
+        socket.emit('button', { light: 'on' });
       });
 
       function ledOn(){
