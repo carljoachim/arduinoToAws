@@ -21,7 +21,8 @@ io.on('connection', function (socket) {
 });
 
 board.on("ready", function() {
-  led = new five.Led(13);
+  var led = new five.Led(13);
+  led.on()
 
   io.on('connection', function (socket) {
     socket.on('button', (data) => {
