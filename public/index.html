@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.5.1/socket.io.min.js'></script>
+    <script>
+      var socket = io('http://localhost:8080');
+      socket.on('news', function (data) {
+        console.log(data);
+      });
+
+      function ledOn(){
+        socket.emit('button', { light: 'on' });
+      }
+
+      function ledOff(){
+        socket.emit('button', { light: 'off' });
+      }
+
+    </script>
+  </head>
+  <body>
+    <h1>Ardunio WebSockets</h1>
+    <button class="button on" onclick="ledOn()">ON</button>
+    <button class="button off" onclick="ledOff()">OFF</button>
+  </body>
+</html>
