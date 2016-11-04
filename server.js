@@ -22,7 +22,7 @@ io.on('connection', function (socket) {
 
 board.on("ready", function() {
   var led = new five.Led(13);
-  led.on()
+  led.blink()
 
   io.on('connection', function (socket) {
     socket.on('button', (data) => {
