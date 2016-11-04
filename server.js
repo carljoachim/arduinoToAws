@@ -15,6 +15,11 @@ app.get('/', function (req, res) {
   res.sendfile(__dirname + 'public/index.html');
 });
 
+io.on('connection', function (socket) {
+  console.log('Server  started...')
+  io.emit('start', 'Started server..');
+});
+
 board.on("ready", function() {
   led = new five.Led(13);
 

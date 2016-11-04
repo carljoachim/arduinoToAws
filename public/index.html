@@ -5,8 +5,8 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.5.1/socket.io.min.js'></script>
     <script>
       var socket = io();
-      socket.on('news', function (data) {
-        console.log(data);
+      socket.on('start', function (data) {
+        console.log('Connection established..')
       });
 
       function ledOn(){
